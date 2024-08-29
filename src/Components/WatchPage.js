@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice';
 import { useSearchParams } from "react-router-dom";
 
-const API_KEY = 'AIzaSyDo1VPto937B7cH1XW7Ibav4cVuMYNUv0w'; // Replace with your API key
+const API_KEY = ''; // Replace with your API key
 
 const WatchPage = (props) => {
     const dispatch = useDispatch();
