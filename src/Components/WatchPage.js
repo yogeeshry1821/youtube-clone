@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice';
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
-const API_KEY = ''; // Replace with your API key
+const API_KEY = 'AIzaSyDDy2zzGLbuJCIHvpo_6Vc7yRFNbQLRpAA'; // Replace with your API key
 
 const WatchPage = (props) => {
     const dispatch = useDispatch();
     const [comments, setComments] = useState([]);
-
+    
     let [searchParams, setSearchParams] = useSearchParams();
     console.log('searchParams', searchParams.get("v"))
     const videoId = searchParams.get('v');
@@ -44,13 +44,16 @@ const WatchPage = (props) => {
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
             </iframe>
+            <div className='bg-gray-200 my-2 p-2 rounded-lg  w-[900px]'>
+                description : {}
+            </div>
             
             <div className=''><h2 className='text-2xl font-bold p-4'>Comments</h2>
                 {comments.length > 0 ? (
                     <ul className=''>
                         {comments.map((commentThread) => (
                             <li key={commentThread.id}>
-                                <div className='my-2 p-2 flex rounded-lg w-5/6'>
+                                <div className='my-2 p-2 flex rounded-lg w-[900px]'>
                                     <div className='w-20' >
                                         <img src={commentThread.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="icon" className='px-2 rounded-full w-14' />
                                     </div>
